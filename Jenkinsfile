@@ -2,7 +2,7 @@ pipeline {
     agent any  // Run the pipeline on any available agent
     environment {
         DOCKER_IMAGE = 'fruk196/django-simple-ecommerce:latest'  // Docker image name
-        K8S_PUBLIC_IP = 'your-kubernetes-server-ip'  // Kubernetes server IP
+        K8S_PUBLIC_IP = '13.55.125.26'  // Kubernetes server IP
     }
     stages {
         // Stage 1: Checkout the code
