@@ -9,7 +9,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/frukbutt196/Django-app-ecommerce.git'
+                 git branch: 'main', 
+   		 credentialsId: '36680b80-065a-4bb4-83cc-9169b75719ea', 
+   		 url: 'https://github.com/frukbutt196/Django-app-ecommerce.git'
+
             }
         }
 
