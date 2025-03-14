@@ -29,6 +29,7 @@ pipeline {
                     # Upgrade pip and install dependencies
                     pip install --upgrade pip
                     pip install -r requirements.txt
+		    pip install pytest  # Add this line to ensure pytest is installed
                 '''
             }
         }
