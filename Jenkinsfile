@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     # Ensure Python 3 and venv are installed
-                    sudo apt update && sudo apt install -y python3 python3-venv python3-pip libpq-dev
+                    sudo apt update && sudo apt install -y python3 python3-venv python3-pip libpq-dev python3-distutils
 
                     # Create and activate virtual environment
                     python3 -m venv ${VENV_DIR}
