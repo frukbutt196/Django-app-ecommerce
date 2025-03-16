@@ -9,27 +9,30 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                 git branch: 'main', 
-   		 credentialsId: '36680b80-065a-4bb4-83cc-9169b75719ea', 
-   		 url: 'https://github.com/frukbutt196/Django-app-ecommerce.git'
-
+                git branch: 'main', 
+                credentialsId: '36680b80-065a-4bb4-83cc-9169b75719ea', 
+                url: 'https://github.com/frukbutt196/Django-app-ecommerce.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    # Ensure Python 3 and venv are installed
+                    # Ensure Python 3, venv, and setuptools are installed
                     sudo apt update && sudo apt install -y python3 python3-venv python3-pip libpq-dev python3-setuptools
 
                     # Create and activate virtual environment
                     python3 -m venv ${VENV_DIR}
                     . ${VENV_DIR}/bin/activate
 
-                    # Upgrade pip and install dependencies
-                    pip install --upgrade pip
+                    # Upgrade pip and setuptools
+                    pip install --upgrade pip setuptools
+
+                    # Install dependencies from requirements.txt
                     pip install -r requirements.txt
-		    pip install pytest  # Add this line to ensure pytest is installed
+
+                    # Ensure pytest is installed
+                    pip install pytest
                 '''
             }
         }
