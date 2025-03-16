@@ -4,6 +4,7 @@ pipeline {
         DOCKER_IMAGE = 'fruk196/django-simple-ecommerce:latest'  // Docker image name
         VENV_DIR = 'venv'  // Define the virtual environment directory
         K8S_PUBLIC_IP = '13.55.125.26'  // Kubernetes server IP
+	DJANGO_SETTINGS_MODULE = 'django-simple-ecommerce.settings'  // Set the Django settings module
     }
 
     stages {
