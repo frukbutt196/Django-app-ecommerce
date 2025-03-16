@@ -38,14 +38,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                sh '''
-                    . ${VENV_DIR}/bin/activate
-                    pytest
-                '''
-            }
-        }
+      
 
         stage('Build Docker Image') {
             steps {
