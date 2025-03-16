@@ -33,7 +33,7 @@ pipeline {
                     pip install -r requirements.txt
 
                     # Ensure pytest is installed
-                    pip install pytest
+                    pip install pytest pytest-django
                 '''
             }
         }
